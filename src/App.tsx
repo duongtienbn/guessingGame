@@ -16,9 +16,6 @@ function App() {
     }
   };
   console.log(randomNumber);
-  // console.log(attempts);
-  // console.log(inputDisabled);
-
   const handleSubmitGuess = () => {
     if (!inputDisabled) {
       const guessNumber = parseInt(guess);
@@ -39,7 +36,7 @@ function App() {
 
       if (attempts >= 3 && guessNumber != randomNumber) {
         setMessenger("gameOver.Try again!");
-        setBackground("yellow");
+        setBackground("gray");
         setInputDisabled(true);
       } else if (attempts >= 3 && guessNumber == randomNumber) {
         setMessenger("Congratulations! You got it right!");
@@ -62,7 +59,7 @@ function App() {
   return (
     <div className="container">
       <div className="box">
-        {attempts === 4 && <p>Số ngẫu nhiên: {randomNumber}</p>}
+        <p>{randomNumber}</p>
         <h1>Number guessing game</h1>
         <p>
           We have selected a random number between 1 and 100. See if you can
